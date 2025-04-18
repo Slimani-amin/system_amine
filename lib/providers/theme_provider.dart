@@ -46,11 +46,9 @@ class ThemeProvider extends ChangeNotifier {
         primary: primaryLight,
         secondary: secondaryLight,
         surface: Colors.white,
-        background: Colors.grey.shade50,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.black87,
-        onBackground: Colors.black87,
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: primaryLight,
@@ -90,14 +88,14 @@ class ThemeProvider extends ChangeNotifier {
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return primaryLight;
             }
             return Colors.white;
           }),
-          foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          foregroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return Colors.white;
             }
             return Colors.black87;
@@ -135,11 +133,9 @@ class ThemeProvider extends ChangeNotifier {
         primary: primaryDark,
         secondary: secondaryDark,
         surface: const Color(0xFF1E1E1E),
-        background: backgroundDark,
         onPrimary: Colors.black87,
         onSecondary: Colors.black87,
         onSurface: Colors.white,
-        onBackground: Colors.white,
       ),
       scaffoldBackgroundColor: backgroundDark,
       appBarTheme: AppBarTheme(
@@ -182,14 +178,14 @@ class ThemeProvider extends ChangeNotifier {
       ),
       segmentedButtonTheme: SegmentedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return primaryDark;
             }
             return const Color(0xFF2A2A2A);
           }),
-          foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          foregroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return Colors.black87;
             }
             return Colors.white;

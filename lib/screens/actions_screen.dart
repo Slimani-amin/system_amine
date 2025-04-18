@@ -312,9 +312,11 @@ class _ActionsScreenState extends State<ActionsScreen>
 
   // Affiche le formulaire pour ajouter une action
   void _showAddActionDialog() {
+    soundService.playSound(SoundType.click);
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      backgroundColor: Colors.transparent,
       builder:
           (context) => Padding(
             padding: EdgeInsets.only(
@@ -327,9 +329,11 @@ class _ActionsScreenState extends State<ActionsScreen>
 
   // Affiche le formulaire pour modifier une action
   void _showEditActionDialog(ActionItem action) {
+    soundService.playSound(SoundType.click);
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      backgroundColor: Colors.transparent,
       builder:
           (context) => Padding(
             padding: EdgeInsets.only(
